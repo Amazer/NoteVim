@@ -1,17 +1,46 @@
 if exists("b:current_syntax")
 	finish
 endif
+let b:current_syntax="note"
 
-echom "Cyc Notevim "
-syntax keyword noteKeywork to times
-syntax keyword noteKeywork if elseif else
-syntax keyword noteKeywork class return
-syntax keyword noteKeywork Q A
+"echom "Cyc Notevim "
+"key word
+syntax keyword noteKeyword to times
+syntax keyword noteKeyword if elseif else
+syntax keyword noteKeyword class return
+syntax match noteKeyword "\vQ:"
+syntax match noteKeyword "\vA:"
+syntax match noteKeyword "\v\="
+highlight link noteKeyword Keyword
 
+"function 
 syntax keyword noteFunction print join string int float
-
-
-highlight link noteKeywork Keyword
 highlight link noteFunction Function	
 
-let b:current_syntax="note"
+"string
+syntax region noteString start=/\v"/ skip=/\v\\./ end=/\v"/
+highlight link noteString String
+
+"comment
+syntax match noteComment "\v#.*$"
+highlight link noteComment Comment
+
+"operators
+syntax match noteOperator "\v\*"
+syntax match noteOperator "\v/"
+syntax match noteOperator "\v\+"
+syntax match noteOperator "\v-"
+syntax match noteOperator "\v\?"
+syntax match noteOperator "\v\*\="
+syntax match noteOperator "\v/\="
+syntax match noteOperator "\v\+\="
+syntax match noteOperator "\v-\="
+
+highlight link noteOperator Operator
+
+"number test
+syntax match noteNumber "^[1-9][0-9]*$"
+syntax match noteNumber "^0$"
+
+syntax match noteNumber "^0[xX][0-9a-fA-F]*$"
+highlight link noteNumber Number
