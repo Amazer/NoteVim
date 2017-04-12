@@ -44,3 +44,8 @@ syntax match noteNumber "^0$"
 
 syntax match noteNumber "^0[xX][0-9a-fA-F]*$"
 highlight link noteNumber Number
+
+"highlight  string
+syntax region noteString start=/\v"/ skip=/\v\\./ end=/\v"/
+highlight link noteString String
+
