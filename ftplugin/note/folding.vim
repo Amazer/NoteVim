@@ -2,7 +2,9 @@
 "setlocal foldignore=
 "
 setlocal foldmethod=expr
-setlocal foldexpr=<SID>GetNoteFold(v:lnum)
+"setlocal foldexpr=<SID>GetNoteFold(v:lnum)
+setlocal foldexpr=GetNoteFold(v:lnum)
+"setlocal foldexpr=<SID>GetNoteFold<cr>g@
 
 function! s:GetNoteFold(lnum)
 	"space line
@@ -23,12 +25,12 @@ function! s:GetNoteFold(lnum)
 	endif
 endfunction
 
-function! s:IndentLevel(lnum)
+function! IndentLevel(lnum)
 	" fold level divide shiftwidth
 	return indent(a:lnum) / &shiftwidth
 endfunction
 
-function! s:NextNonBlackLine(lnum)
+function! NextNonBlackLine(lnum)
 	" file's total line num
 	let numlines=line('$')
 
