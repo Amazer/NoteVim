@@ -21,6 +21,10 @@ highlight link noteFunction Function
 syntax region noteString start=/\v"/ skip=/\v\\./ end=/\v"/
 highlight link noteString String
 
+"english word
+syntax match engWord "\v[_a-zA-Z]+"
+highlight link engWord Keyword
+
 "comment
 syntax match noteComment "\v#.*$"
 highlight link noteComment Comment
