@@ -3,6 +3,11 @@ if exists("b:current_syntax")
 endif
 let b:current_syntax="note"
 
+":h highlight-args
+"colors can set :
+"color: ctermbg guibg guifg 
+"font:   gui term
+"font args: blod
 "echom "Cyc Notevim "
 "key word
 "syntax keyword noteKeyword to times
@@ -63,6 +68,7 @@ highlight link noteKeyword Keyword
 syntax match titleTag "\v^[0-9]+\..*$"
 syntax match titleTag "\v^.*:$"
 syntax match titleTag "\v^.*：$"
-highlight link titleTag  Define
+"highlight link titleTag Function
+highlight titleTag ctermbg=Black ctermfg=Cyan guifg=Red
 
 
