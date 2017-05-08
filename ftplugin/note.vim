@@ -1,20 +1,23 @@
-"nnoremap <leader>t :set operatorfunc=GeneraTagMark<cr>g@
-nnoremap <leader>t :call InsertTagMark()<cr>
+nnoremap <leader>t :set operatorfunc=GeneraTagMark<cr>g@
+"nnoremap <leader>t :call InsertTagMark()<cr>
 vnoremap <leader>t :<c-u>call GeneraTagMark(visualmode())<cr>
 "vnoremap <leader>t :<c-u>call InsertTagMarkVMode()<cr>
 
 vnoremap <leader>r :<c-u>call RemoveTagMark(visualmode())<cr>
 nnoremap <leader>r :call RemoveTagMark_Normal()<cr>
 
+if exists('g:note_vim_tag_mark') 
+    finish
+endif
+let g:note_vim_tag_mark="*"
+
+
 function! RemoveTagMark_Normal()
-    "use match remove?
-    ":'<,'>s/\%V(/#/g
     let str=expand("<cWORD>")
     if IsLabel(str)
-        echom "is label true"
-        normal! /expand("<cWORD>")
-        normal! '<dl\<esc>
-        normal! '>dl\<esc>
+        let len=strlen(str)
+        let normalStr=strpart(str,1,(len-2))
+        execute "normal! ciW".normalStr
     endif
         
 endfunction
@@ -51,7 +54,7 @@ function! InsertTagMark()
     if IsLabel(str)
         return
     else
-	    silent execute "silent normal! i\*\<esc>ea\*\<esc>"
+	    silent execute "silent normal! ciW*".str."*"
     endif
 endfunction
 
