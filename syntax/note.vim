@@ -31,8 +31,8 @@ highlight link noteString String
 
 
 "comment
-syntax match noteComment "\v#.*$"
-syntax match noteComment "\v\".*$"
+syntax match noteComment "\v# .*$"
+syntax match noteComment "\v\" .*$"
 highlight link noteComment Comment
 
 "operators
