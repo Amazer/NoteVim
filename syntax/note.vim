@@ -3,7 +3,7 @@ if exists("b:current_syntax")
 endif
 let b:current_syntax="note"
 
-"reference from colorschems .vim
+"reference from desert.vim
 "define highlight groups
 highlight MainTitleTag guifg=magenta gui=none ctermfg=magenta 
 highlight TitleTag ctermbg=Black ctermfg=Cyan guifg=Red
@@ -11,7 +11,7 @@ highlight DefineWord guifg=magenta guibg=bg ctermfg=gray
 highlight Attentions guifg=yellow
 highlight WebLink gui=underline  guifg=SeaGreen guibg=bg
 highlight EnglishWord guifg=goldenrod guibg=bg
-highlight Question guifg=springgreen guibg=bg
+highlight QuestionGroup guifg=springgreen guibg=bg
 highlight TipsGroup guifg=magenta guibg=bg
 
 "echom "Cyc Notevim "
@@ -19,11 +19,6 @@ highlight TipsGroup guifg=magenta guibg=bg
 "syntax keyword noteKeyword to times
 "syntax keyword noteKeyword if elseif else
 
-"defind question answer group
-syntax match questionGroup "\vQ:"
-syntax match questionGroup "\vA:"
-syntax match questionGroup "\v\="
-highlight link noteKeyword Question
 
 "function 
 syntax keyword noteFunction print join string int float
@@ -59,6 +54,7 @@ syntax match noteNumber "^0$"
 
 syntax match noteNumber "^0[xX][0-9a-fA-F]*$"
 highlight link noteNumber Number
+
 "common program key words
 syntax keyword programKeyword import from 
 highlight link programKeyword Keyword
@@ -73,6 +69,10 @@ highlight link engWord EnglishWord
 
 "*Keyword*
 syntax match noteKeyword "\v\*[_a-zA-Z0-9]+\*"
+highlight link noteKeyword DefineWord
+
+"[Keyword]
+syntax match noteKeyword "\v\[[_a-zA-Z0-9]+\]"
 highlight link noteKeyword DefineWord
 
 "title tag match
@@ -92,3 +92,8 @@ highlight link webLink WebLink
 syntax match tipsGroup "\v^:.*$"
 highlight link tipsGroup TipsGroup
 
+"defind question answer group
+syntax match questionGroup "\v^[qQ]:"
+syntax match questionGroup "\v[aA]:"
+syntax match questionGroup "\v\="
+highlight link noteKeyword QuestionGroup
