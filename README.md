@@ -8,3 +8,8 @@ plan:
 4.my own doc general way
 	1.help tags: how to make tag ,and remove marks"*"
 
+Usage:
+1.title hilight
+2.*keyword* hilight
+3.tips start with :
+
