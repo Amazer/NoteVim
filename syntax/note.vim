@@ -21,7 +21,7 @@ highlight TipsGroup guifg=magenta guibg=bg
 
 
 "function 
-syntax keyword noteFunction print join string int float
+syntax keyword noteFunction print join string int float def if else
 highlight link noteFunction Function	
 
 "string
@@ -90,6 +90,7 @@ highlight link webLink WebLink
 
 "tips group define
 syntax match tipsGroup "\v^:.*$"
+syntax match tipsGroup "\v^ +[0-9]+\..*$"
 highlight link tipsGroup TipsGroup
 
 "defind question answer group
