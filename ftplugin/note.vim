@@ -6,6 +6,13 @@ vnoremap <leader>t :<c-u>call GeneraTagMark(visualmode())<cr>
 vnoremap <leader>r :<c-u>call RemoveTagMark(visualmode())<cr>
 nnoremap <leader>r :call RemoveTagMark_Normal()<cr>
 
+" arrow
+inoremap <right> →
+inoremap <left> ←
+inoremap <up> ↑
+inoremap <down> ↓
+
+
 if exists('g:note_vim_tag_mark') 
     finish
 endif
