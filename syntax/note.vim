@@ -13,7 +13,7 @@ highlight WebLink gui=underline  guifg=SeaGreen guibg=bg
 highlight EnglishWord guifg=goldenrod guibg=bg
 highlight QuestionGroup guifg=springgreen guibg=bg
 highlight TipsGroup guifg=magenta guibg=bg
-highlight CategoryGroup guifg=Blue guibg=bg
+highlight CategoryGroup guifg=#66cd00 guibg=bg
 
 "echom "Cyc Notevim "
 "key word
