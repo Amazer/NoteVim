@@ -13,6 +13,7 @@ highlight WebLink gui=underline  guifg=SeaGreen guibg=bg
 highlight EnglishWord guifg=goldenrod guibg=bg
 highlight QuestionGroup guifg=springgreen guibg=bg
 highlight TipsGroup guifg=magenta guibg=bg
+highlight CategoryGroup guifg=Blue guibg=bg
 
 "echom "Cyc Notevim "
 "key word
@@ -72,6 +73,11 @@ highlight link engWord EnglishWord
 "*Keyword*
 syntax match noteKeyword "\v\*[_a-zA-Z0-9]+\*"
 highlight link noteKeyword DefineWord
+
+"*...   CategoryGroup
+syntax match categoryGroup "\v^\s*\..*$"
+highlight link categoryGroup CategoryGroup
+
 
 "[Keyword]
 syntax match noteKeyword "\v\[[_a-zA-Z0-9]+\]"
