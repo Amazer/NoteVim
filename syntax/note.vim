@@ -57,6 +57,8 @@ highlight link noteNumber Number
 
 "common program key words
 syntax keyword programKeyword import from 
+"as few as possible
+syntax match programKeyword "\v\*.{-}\*"
 highlight link programKeyword Keyword
 
 "highlight  string
@@ -81,6 +83,8 @@ highlight link mainTitleTag MainTitleTag
 
 syntax match titleTag "\v^.*:$"
 syntax match titleTag "\v^.*：$"
+syntax match titleTag "\v.*:"
+syntax match titleTag "\v.*："
 highlight link titleTag TitleTag
 
 "web link
