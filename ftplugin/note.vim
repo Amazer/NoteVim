@@ -3,6 +3,7 @@ nnoremap <leader>t :set operatorfunc=GeneraTagMark<cr>g@
 vnoremap <leader>t :<c-u>call GeneraTagMark(visualmode())<cr>
 "vnoremap <leader>t :<c-u>call InsertTagMarkVMode()<cr>
 
+
 vnoremap <leader>r :<c-u>call RemoveTagMark(visualmode())<cr>
 nnoremap <leader>r :call RemoveTagMark_Normal()<cr>
 
