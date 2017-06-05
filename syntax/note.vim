@@ -7,8 +7,11 @@ let b:current_syntax="note"
 "define highlight groups
 highlight MainTitleTag guifg=magenta gui=none ctermfg=magenta 
 highlight TitleTag ctermbg=Black ctermfg=Cyan guifg=Red
-highlight DefineWord guifg=magenta guibg=bg ctermfg=gray
-highlight Attentions guifg=yellow
+" highlight BigTitleColor  guifg=olivedrab gui=bold
+highlight BigTitleColor  guifg=Cyan gui=bold
+" highlight DefineWord guifg=magenta guibg=bg ctermfg=gray
+highlight DefineWord guifg=Red guibg=bg ctermfg=gray 
+highlight Attentions guifg=Red gui=bold
 highlight WebLink gui=underline  guifg=SeaGreen guibg=bg
 highlight EnglishWord guifg=goldenrod guibg=bg
 highlight QuestionGroup guifg=springgreen guibg=bg
@@ -19,6 +22,10 @@ highlight CategoryGroup guifg=#66cd00 guibg=bg
 "key word
 "syntax keyword noteKeyword to times
 "syntax keyword noteKeyword if elseif else
+
+"define Title <<xxx>>
+syntax match BigTitle "\v\<\<.+\>\>" 
+highlight link BigTitle BigTitleColor	
 
 
 "function 
@@ -60,7 +67,7 @@ highlight link noteNumber Number
 syntax keyword programKeyword import from 
 "as few as possible
 syntax match programKeyword "\v\*.{-}\*" contains=HideStar
-highlight link programKeyword Keyword
+highlight link programKeyword DefineWord
 
 "highlight  string
 "syntax region noteString start=/\v"/ skip=/\v\\./ end=/\v"/
@@ -84,14 +91,19 @@ syntax match noteKeyword "\v\[[_a-zA-Z0-9]+\]"
 highlight link noteKeyword DefineWord
 
 "title tag match
-syntax match mainTitleTag "\v^[0-9]+\..*$"
+syntax match mainTitleTag "\v^[0-9]+\..*$" contains=programKeyword
 highlight link mainTitleTag MainTitleTag
+"Attentions note:
+syntax match attentionNote "\vnote："
+syntax match attentionNote "\vnote:"
+highlight link attentionNote Attentions
 
 "移除冒号红色的语法高亮设置。有人反映不好用。
 " syntax match titleTag "\v^.*:$"
 " syntax match titleTag "\v^.*：$"
 " syntax match titleTag "\v.*:"
 " syntax match titleTag "\v.*："
+" note: will hight light
 " highlight link titleTag TitleTag
 
 "web link
@@ -109,6 +121,8 @@ syntax match questionGroup "\v^[qQ]:"
 syntax match questionGroup "\v[aA]:"
 syntax match questionGroup "\v\="
 highlight link noteKeyword QuestionGroup 
+
+
 "隐藏匹配结果中的*号
 syntax match HideStar "\v\*" contained conceal
 set conceallevel=2
