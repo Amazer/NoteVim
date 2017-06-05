@@ -87,11 +87,12 @@ highlight link noteKeyword DefineWord
 syntax match mainTitleTag "\v^[0-9]+\..*$"
 highlight link mainTitleTag MainTitleTag
 
-syntax match titleTag "\v^.*:$"
-syntax match titleTag "\v^.*：$"
-syntax match titleTag "\v.*:"
-syntax match titleTag "\v.*："
-highlight link titleTag TitleTag
+"移除冒号红色的语法高亮设置。有人反映不好用。
+" syntax match titleTag "\v^.*:$"
+" syntax match titleTag "\v^.*：$"
+" syntax match titleTag "\v.*:"
+" syntax match titleTag "\v.*："
+" highlight link titleTag TitleTag
 
 "web link
 syntax match webLink "\vhttp:.*$"
