@@ -59,7 +59,7 @@ highlight link noteNumber Number
 "common program key words
 syntax keyword programKeyword import from 
 "as few as possible
-syntax match programKeyword "\v\*.{-}\*"
+syntax match programKeyword "\v\*.{-}\*" contains=HideStar
 highlight link programKeyword Keyword
 
 "highlight  string
@@ -71,7 +71,7 @@ syntax match engWord "\v[_a-zA-Z]+"
 highlight link engWord EnglishWord
 
 "*Keyword*
-syntax match noteKeyword "\v\*[_a-zA-Z0-9]+\*"
+syntax match noteKeyword "\v\*[_a-zA-Z0-9]+\*" contains=HideStar
 highlight link noteKeyword DefineWord
 
 "*...   CategoryGroup
@@ -87,11 +87,11 @@ highlight link noteKeyword DefineWord
 syntax match mainTitleTag "\v^[0-9]+\..*$"
 highlight link mainTitleTag MainTitleTag
 
-syntax match titleTag "\v^.*:$"
-syntax match titleTag "\v^.*：$"
-syntax match titleTag "\v.*:"
-syntax match titleTag "\v.*："
-highlight link titleTag TitleTag
+" syntax match titleTag "\v^.*:$"
+" syntax match titleTag "\v^.*：$"
+" syntax match titleTag "\v.*:"
+" syntax match titleTag "\v.*："
+" highlight link titleTag TitleTag
 
 "web link
 syntax match webLink "\vhttp:.*$"
@@ -107,4 +107,8 @@ highlight link tipsGroup TipsGroup
 syntax match questionGroup "\v^[qQ]:"
 syntax match questionGroup "\v[aA]:"
 syntax match questionGroup "\v\="
-highlight link noteKeyword QuestionGroup
+highlight link noteKeyword QuestionGroup 
+"隐藏匹配结果中的*号
+syntax match HideStar "\v\*" contained conceal
+set conceallevel=2
+set concealcursor=nc

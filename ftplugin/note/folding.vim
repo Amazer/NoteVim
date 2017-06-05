@@ -1,7 +1,8 @@
 "setlocal foldmethod=indent
 "setlocal foldignore=
 "
-setlocal foldmethod=expr
+setlocal foldmethod=indent
+" setlocal foldmethod=expr
 "setlocal foldexpr=<SID>GetNoteFold(v:lnum)
 setlocal foldexpr=GetNoteFold(v:lnum)
 "setlocal foldexpr=<SID>GetNoteFold<cr>g@
