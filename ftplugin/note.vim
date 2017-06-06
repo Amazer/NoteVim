@@ -8,10 +8,16 @@ vnoremap <leader>r :<c-u>call RemoveTagMark(visualmode())<cr>
 nnoremap <leader>r :call RemoveTagMark_Normal()<cr>
 
 " arrow
-inoremap <right> →
-inoremap <left> ←
+" inoremap <right> →
+" inoremap <left> ←
 inoremap <up> ↑
 inoremap <down> ↓
+" 
+inoremap ( ()<left>
+inoremap （ （）<left>
+inoremap " ""<left>
+inoremap { {}<left>
+inoremap [ []<left>
 
 
 if exists('g:note_vim_tag_mark') 
