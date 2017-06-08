@@ -82,7 +82,7 @@ syntax match noteKeyword "\v\*[_a-zA-Z0-9]+\*" contains=HideStar
 highlight link noteKeyword DefineWord
 
 "*...   CategoryGroup
-syntax match categoryGroup "\v^\s*\..*$"
+syntax match categoryGroup "\v^\s*\..*$" contains=programKeyword
 highlight link categoryGroup CategoryGroup
 
 
