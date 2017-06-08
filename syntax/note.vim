@@ -112,8 +112,8 @@ syntax match webLink "\vhttps:.*$"
 highlight link webLink WebLink
 
 "tips group define
-syntax match tipsGroup "\v^:.*$"
-syntax match tipsGroup "\v^ +[0-9]+\..*$"
+syntax match tipsGroup "\v^:.*$" contains=programKeyword
+syntax match tipsGroup "\v^ +[0-9]+\..*$" contains=programKeyword
 highlight link tipsGroup TipsGroup
 
 "defind question answer group
@@ -126,4 +126,4 @@ highlight link noteKeyword QuestionGroup
 "隐藏匹配结果中的*号
 syntax match HideStar "\v\*" contained conceal
 set conceallevel=2
-set concealcursor=nc
+set concealcursor=vnc
