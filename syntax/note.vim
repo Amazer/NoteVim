@@ -65,8 +65,8 @@ highlight link noteNumber Number
 
 "common program key words
 syntax keyword programKeyword import from 
-"as few as possible
-syntax match programKeyword "\v\*.{-}\*" contains=HideStar
+"*xxx*
+syntax match programKeyword "\v\*{1}[^\*]+\*{1}" contains=HideStar
 highlight link programKeyword DefineWord
 
 "highlight  string
@@ -77,9 +77,9 @@ highlight link programKeyword DefineWord
 syntax match engWord "\v[_a-zA-Z]+"
 highlight link engWord EnglishWord
 
-"*Keyword*
-syntax match noteKeyword "\v\*[_a-zA-Z0-9]+\*" contains=HideStar
-highlight link noteKeyword DefineWord
+" "*Keyword*
+" syntax match noteKeyword "\v\*[_a-zA-Z0-9]+\*" contains=HideStar
+" highlight link noteKeyword DefineWord
 
 "*...   CategoryGroup
 syntax match categoryGroup "\v^\s*\..*$" contains=programKeyword
